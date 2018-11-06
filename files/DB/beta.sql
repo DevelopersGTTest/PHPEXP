@@ -18,6 +18,13 @@ CREATE TABLE bus(
     PRIMARY KEY(id_bus)	
 );
 
+CREATE TABLE card(
+	id_card INT NOT NULL AUTO_INCREMENT,
+    codigo_barra INT NOT NULL,
+    codigo_raspable VARCHAR(255) not null,
+    PRIMARY KEY(id_card)
+);
+
 ALTER TABLE config_prelogin
 	ADD FOREIGN KEY(id_bus_manana) REFERENCES bus(id_bus);
     
