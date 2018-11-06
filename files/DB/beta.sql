@@ -4,6 +4,8 @@ CREATE TABLE config_prelogin(
     codigo_barra INT NOT NULL,
     nombres VARCHAR(255) NOT NULL,
     apellidos VARCHAR(255) NOT NULL,
+    telefono_encargado VARCHAR(255) NOT NULL,
+    email_encargado VARCHAR(255) NOT NULL,
     id_bus_manana INT NOT NULL,
     id_bus_tarde INT NOT NULL,
     PRIMARY KEY(id_config_prelogin)

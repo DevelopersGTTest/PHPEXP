@@ -12,11 +12,16 @@ if(!empty($_POST)){
     $codigo_barra = $_POST['codigo_barra'];
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
+    $telefono_encargado = $_POST['telefono_encargado'];
+    $email_encargado = $_POST['email_encargado'];
     $id_bus_manana = $_POST['id_bus_manana'];
     $id_bus_tarde = $_POST['id_bus_tarde'];
 
-    $insrt = "INSERT INTO config_prelogin(codigo_barra, nombres, apellidos,id_bus_manana, id_bus_tarde)
-    VALUES(:codigo_barra, :nombres, :apellidos, :id_bus_manana, :id_bus_tarde)";
+    //FIxed de nueva consulta
+    $insrt = "INSERT INTO config_prelogin(codigo_barra, nombres, apellidos, telefono_encargado, 
+    email_encargado, id_bus_manana, id_bus_tarde)
+    VALUES(:codigo_barra, :nombres, :apellidos, :telefono_encargado, :email_encargado, 
+    :id_bus_manana, :id_bus_tarde)";
 
     $consulta = $pdo->prepare($insrt);
    
@@ -25,6 +30,8 @@ if(!empty($_POST)){
         'codigo_barra' =>  $codigo_barra,
         'nombres'=> $nombres,
         'apellidos' => $apellidos,
+        'telefono_encargado' => $telefono_encargado,
+        'email_encargado' => $email_encargado,
         'id_bus_manana' => $id_bus_manana,
         'id_bus_tarde' => $id_bus_tarde, 
     ]);
@@ -43,6 +50,13 @@ if(!empty($_POST)){
     <title>PRE LOGIN</title>
 </head>
 <body>
+
+    <?php
+        $message = 'Tu informacion se inserto!!!';
+        if($ins == true){
+            echo '<p>'. $message .'</p>'; 
+        }
+    ?>
   
   <form action="login.php" method="POST" >
     <label for="">codigo_barra</label>
@@ -51,6 +65,10 @@ if(!empty($_POST)){
     <input type="text"  name="nombres" id="nombres" placeholder="Ingrese sus nombres">
     <label for="">apellidos</label>
     <input type="text" name="apellidos" id="apellidos" placeholder="ingrese sus apellidos">
+    <label for="">numero de telefono</label>
+    <input type="number" name="telefono_encargado" placeholder="Ingrese">
+    <label for="">Correo electronico</label>
+    <input type="email" name="email_encargado" placeholder="email_encargado" >
     <label for="">bus por la mañana</label>
     <select name="id_bus_manana" id="id_bus_manana" >
     <?php
