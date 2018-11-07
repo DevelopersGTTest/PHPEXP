@@ -9,6 +9,11 @@ $sql = "SELECT * FROM bus";
 $array = $pdo->query($sql);
 $result = $array->fetchAll();
 
+//PAGOS
+$sqlx = "SELECT * FROM mes";
+$payment = $pdo->query($sqlx);
+$resultx = $payment->fetchAll();
+
 if(!empty($_POST)){
     $codigo_barra = $_POST['codigo_barra'];
     $nombres = $_POST['nombres'];
@@ -97,22 +102,27 @@ if(!empty($_POST)){
     <input type="text" name="cantidad_pago" placeholder="Ingresa tu cantidad pago" >
     <label for="">cantidad de mora</label>
     <input type="text" name="cantidad_mora" placeholder="Ingresa tu cantidad de mora">
-    <label for="">APLICAR</label>
-    <input type="button" id="mostrar" name="boton1" value="aplicar">
-    
-  </form>
+    </form>
+    <br>
+        <a class="toggle" href="#example">APLICAR</a>
+    <br>
 
-        <div class="target">
-            <h1>hola</h1>
-        </div>
- 
-        <p>
-  <a class="toggle" href="#example">Toggle Div</a>
-</p>
 
-<div class="toggle-content" id="example" style="display: none;" >
-  Here's some text we want to toggle visibility of. Let's do it!
-</div>
+    <div class="toggle-content" id="example" style="display: none;" >
+        <table>
+            <th>
+                <tr>Mes</tr>
+                <tr>pago mens</tr>
+                <tr>cant mora</tr>
+            </th>
+            <?php
+              foreach($resultx as $val ){
+                  echo '<p>' . $val['id_mes'] .'<>';
+              }  
+            ?>
+        
+        </table>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

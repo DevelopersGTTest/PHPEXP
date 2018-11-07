@@ -25,6 +25,24 @@ CREATE TABLE card(
     PRIMARY KEY(id_card)
 );
 
+CREATE TABLE pagos(
+	id_pagos INT NOT NULL AUTO_INCREMENT,
+    id_mes INT NOT NULL,
+    cantidad_mes INT NOT NULL,
+    cantidad_mora INT NOT NULL,
+    PRIMARY KEY(id_pagos)
+ );
+ 
+ 
+ CREATE TABLE mes(
+ 	id_mes INT NOT NULL AUTO_INCREMENT,
+     nombre VARCHAR(255),
+     PRIMARY KEY(id_mes)
+ );
+ 
+ ALTER TABLE pagos
+ 	ADD FOREIGN KEY(id_mes) REFERENCES mes(id_mes)
+
 ALTER TABLE config_prelogin
 	ADD FOREIGN KEY(id_bus_manana) REFERENCES bus(id_bus);
     

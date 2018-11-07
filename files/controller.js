@@ -1,4 +1,4 @@
-console.log('Hi')
+console.log('hola')
 
 var mostrar = function(elemento){
     elemento.style.display = 'block'
