@@ -3,6 +3,7 @@
 require_once 'conexion.php';
 
 $ins = false;
+$apli = false;
 
 $sql = "SELECT * FROM bus";
 $array = $pdo->query($sql);
@@ -88,5 +89,34 @@ if(!empty($_POST)){
     <input type="submit" value="Save" >
   </form>
 
+
+  <h1>Esta es la seccion de pagos</h1>
+
+  <form action="">
+    <label for="">cantidad de pago</label>
+    <input type="text" name="cantidad_pago" placeholder="Ingresa tu cantidad pago" >
+    <label for="">cantidad de mora</label>
+    <input type="text" name="cantidad_mora" placeholder="Ingresa tu cantidad de mora">
+    <label for="">APLICAR</label>
+    <input type="button" id="mostrar" name="boton1" value="aplicar">
+    
+  </form>
+
+        <div class="target">
+            <h1>hola</h1>
+        </div>
+ 
+        <p>
+  <a class="toggle" href="#example">Toggle Div</a>
+</p>
+
+<div class="toggle-content" id="example" style="display: none;" >
+  Here's some text we want to toggle visibility of. Let's do it!
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script src="./controller.js" ></script>
 
 </html>

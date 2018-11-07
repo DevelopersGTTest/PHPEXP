@@ -10,17 +10,14 @@ if(!empty($_POST)){
                 AND codigo_raspable= :codigo_raspable";
 
     $prepared = $pdo->prepare($query);
-    
-    
+                    
     $prepared->execute([
         'codigo_barra' => $_POST['codigo_barra'],
         'codigo_raspable' => $_POST['codigo_raspable']
     ]);
-
-    //$user = $prepared->fetch(PDO::FETCH_ASSOC);    
+   
     $result = $prepared->fetch(PDO::FETCH_ASSOC);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +26,7 @@ if(!empty($_POST)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mi superlogin</title>
+    <title>Mi super login</title>
 </head>
 <body>
 
