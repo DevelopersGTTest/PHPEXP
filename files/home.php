@@ -13,7 +13,7 @@ if(isset($_SESSION['codigo_barra'])){
     $result = $preparando_consulta->fetchAll();
 
     //var_dump($result);
-    
+
 }else{
     header('Location: login.php');
 }
@@ -28,6 +28,8 @@ if(isset($_SESSION['codigo_barra'])){
     <title>Document</title>
 </head>
 <body>
+
+    <a href="logout.php">Salir</a>
 
     <table>
         <tr>
