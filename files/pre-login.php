@@ -63,6 +63,8 @@ if(!empty($_POST)){
             echo '<p>'. $message .'</p>'; 
         }
     ?>
+
+    <a href="login.php">INDEX</a>
   
   <form action="login.php" method="POST" >
     <label for="">codigo_barra</label>

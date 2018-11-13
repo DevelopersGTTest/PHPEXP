@@ -1,22 +1,26 @@
 <?php
 
+session_start();
 require_once 'conexion.php';
-//consulta SELECT * FROM card WHERE codigo_barra='12345' AND codigo_raspable='2468'
 $result = false;
 
 if(!empty($_POST)){
- 
+    $codigo_barra = $_POST['codigo_barra'];
+    $codigo_raspable = $_POST['codigo_raspable'];
+
+    
     $query = "SELECT * FROM card WHERE codigo_barra= :codigo_barra 
                 AND codigo_raspable= :codigo_raspable";
 
-    $prepared = $pdo->prepare($query);
-                    
+    $prepared = $pdo->prepare($query);           
     $prepared->execute([
-        'codigo_barra' => $_POST['codigo_barra'],
-        'codigo_raspable' => $_POST['codigo_raspable']
+        'codigo_barra' => $codigo_barra,
+        'codigo_raspable' => $codigo_raspable 
     ]);
    
     $result = $prepared->fetch(PDO::FETCH_ASSOC);
+
+    $_SESSION['codigo_barra'] =  $codigo_barra; 
 }
 ?>
 
@@ -31,11 +35,12 @@ if(!empty($_POST)){
 <body>
 
     <?php
-    var_dump($result);
     if($result == true){
         header('Location: home.php');
     }        
     ?>
+
+    <a href="pre-login.php">PRE-LOGIN</a>
 
     <form action="login.php" method="POST" >
         <label for="">codigo_barra</label>
