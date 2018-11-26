@@ -24,3 +24,4 @@ CREATE TABLE post(
     PRIMARY KEY(id_post),
     FOREIGN KEY(id_categoria) REFERENCES categoria(id_categoria),
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
+);
