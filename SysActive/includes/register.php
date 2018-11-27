@@ -17,7 +17,7 @@
     <input type="email" id="inputEmail" class="form-control" placeholder="Escribe tu email" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="escribe tu password" required="">
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
+    <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Acceder</button>
 </form>
 
 </div>
