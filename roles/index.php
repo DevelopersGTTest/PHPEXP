@@ -6,16 +6,20 @@ if(isset($_POST)){
     $nick = isset($_POST['nick']) ? $_POST['nick'] : false ;
     $pass = isset($_POST['pass']) ? $_POST['pass'] : false ;
 
-    //Array de usuario
-    $arrayUsuario = [ $nick, $pass, 1 ];
-
-    $rol = $arrayUsuario[2];    
-
+    global  $rol;     
+    
     if($rol == 1){
         echo '<script> alert("Eres Admin") </script>';
     }else{
         echo '<script> alert("ese un simple usuario") </script>';
     }
+    
+    $sql = "SELECT * FROM usuarios WHERE nick= ? AND pass= ? AND id_rol = '$rol'";
+    
+    var_dump($sql);
+    
+   
+    
     
     /*Consulta necesaria: 
         SELECT * FROM usuarios WHERE nick="sam" AND pass="123"
