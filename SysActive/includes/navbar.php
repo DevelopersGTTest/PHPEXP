@@ -18,7 +18,7 @@
         <a class="nav-link" href="./includes/login.php">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Registrar</a>
+        <a class="nav-link" href="./includes/register.php">Registrar</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
