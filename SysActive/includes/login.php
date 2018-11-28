@@ -5,6 +5,14 @@
 
 ?>
 <br><br>
+<div>
+    <?php
+        if(isset($_SESSION['completado'])){
+            echo $_SESSION['completado'];
+        }
+    ?>
+</div>
+
 <div class="container">
 
 <form class="form-signin">
