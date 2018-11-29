@@ -19,7 +19,8 @@
 
     <?php  if(isset($_SESSION['email_most'])) :?>
         <div>
-            <h3>Bienvenido <?=$_SESSION['email_most'] ; ?> </h3>
+            <h3>Bienvenido <?=$_SESSION['email_most'] ; ?></h3>
+            <a href="./includes/logout.php">Salir</a>
         </div>
     <?php endif; ?>
 

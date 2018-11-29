@@ -3,6 +3,7 @@
     require_once 'conexion.php';
     require_once 'navbar.php';
 
+    session_start();
 ?>
 <br><br>
 <div>
@@ -12,6 +13,12 @@
         }
     ?>
 </div>
+
+    <?php if(isset($_SESSION['no_user'])) : ?>
+        <script>
+            alert("Usuario/Contraseña incorrecta");
+        </script>
+    <?php endif; ?>
 
 <div class="container">
 
