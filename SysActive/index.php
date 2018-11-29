@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,12 @@
     ?>
 </head>
 <body>
+
+    <?php  if(isset($_SESSION['email_most'])) :?>
+        <div>
+            <h3>Bienvenido <?=$_SESSION['email_most'] ; ?> </h3>
+        </div>
+    <?php endif; ?>
 
     <!-- Post Inicio -->
     <div class="container">
