@@ -7,7 +7,7 @@ if(!empty($_POST)){
     $pass = $_POST['pass'];
 
     $sql = "SELECT * FROM usuarios WHERE nick='$nick' AND pass='$pass'";
-
+    die();
     $query = mysqli_query($db, $sql);
 
     if($query && mysqli_num_rows($query) == 1 ){
