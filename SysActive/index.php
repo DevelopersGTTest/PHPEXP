@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once './includes/funciones.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,27 @@
     <?php endif; ?>
 
     <!-- Post Inicio -->
+    <?php
+        $post = listar_post($db);
+        if(!empty($post)):
+          foreach($post as $value):
+    ?>
     <div class="container">
+        <div class="card">
+            <h5 class="card-header">Backend</h5>
+            <div class="card-body">
+                <h5 class="card-title"><?=$value['titulo'] ?></h5>
+                <p class="card-text"><?=$value['descripcion']?> </p>
+                <a href="#" class="btn btn-primary">Ver respuestas</a>
+            </div>
+        </div>
+    </div>
+
+    <?php  
+           endforeach;   
+           endif;
+    ?>    
+    <!--div class="container">
         <div class="card">
             <h5 class="card-header">Backend</h5>
         <div class="card-body">
@@ -34,7 +55,7 @@
             <a href="#" class="btn btn-primary">Ver respuestas</a>
         </div>
     </div>
-    </div>
+    </div-->
     <!-- Post   Fin -->
     
 </body>
