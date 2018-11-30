@@ -33,7 +33,7 @@
     ?>
     <div class="container">
         <div class="card">
-            <h5 class="card-header">Backend</h5>
+            <h5 class="card-header"><?=$value['nombre_categoria']?></h5>
             <div class="card-body">
                 <h5 class="card-title"><?=$value['titulo'] ?></h5>
                 <p class="card-text"><?=$value['descripcion']?> </p>
