@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/funciones.js" ></script>
     <?php
         require_once 'includes/cdn.php';
     ?>
