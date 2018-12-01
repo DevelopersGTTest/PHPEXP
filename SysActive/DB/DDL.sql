@@ -16,7 +16,7 @@ CREATE TABLE categoria(
 
 
 CREATE TABLE post(
-	id_post INT NOT NULL,
+	id_post INT NOT NULL AUTO_INCREMENT ,
     titulo VARCHAR(255) NOT NULL,
     descripcion VARCHAR(255) NOT NULL,
     id_categoria INT NOT NULL,
