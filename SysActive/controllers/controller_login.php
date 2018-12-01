@@ -16,7 +16,8 @@ if(isset($_POST)){
         $usuario = mysqli_fetch_assoc($query);
         
         $_SESSION['email_most'] = $usuario['email'];
-
+        $_SESSION['id_usuario'] = $usuario['id_usuario'];
+       
         header("Location: ../index.php");
 
     }else{
