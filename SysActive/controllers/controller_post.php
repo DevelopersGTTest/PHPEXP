@@ -13,6 +13,8 @@ if(isset($_POST)){
     $sql = "INSERT INTO post(titulo, descripcion, id_categoria, id_usuario) 
         VALUES('$titulo', '$descripcion', $id_categoria, $id_usuario)";
 
+    var_dump($sql);    
+
     $query = mysqli_query($db, $sql);
 
     if($query){

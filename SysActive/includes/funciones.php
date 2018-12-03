@@ -17,4 +17,18 @@ function listar_post($cnn){
     return $resultado;
 }
 
+function listar_categorias($cnn){
+
+    $sql = "SELECT * FROM categoria";
+
+    $categoria = mysqli_query($cnn, $sql);
+
+    $resultado;
+    
+    if($categoria &&  mysqli_num_rows($categoria) >= 1 ){
+        $resultado = $categoria;
+    }
+    return $resultado;
+}
+
 ?>

@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once './includes/funciones.php';
+    $id_usuario = $_SESSION['id_usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,13 +23,15 @@
 
     <?php  if(isset($_SESSION['email_most'])) :?>
         <div>
-            <h3>Bienvenido <?=$_SESSION['email_most'] ; ?></h3>
-            <a href="./includes/logout.php">Salir</a>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Ingresar Post
-            </button>
-            
+            <?php if(isset($_SESSION['id_usuario'])) : ?>
+                <h3>Bienvenido <?=$_SESSION['email_most'] ; ?></h3>
+                <h3>Tu id es: <?=$_SESSION['id_usuario'] ; ?></h3>
+                <a href="./includes/logout.php">Salir</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Ingresar Post
+                </button>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
@@ -83,10 +86,23 @@
             <input type="text" id="inputEmail" class="form-control" id="titulo" name="titulo"  placeholder="Coloca un titulo" required="" autofocus="">
             <label for="inputPassword" class="sr-only">descripcion</label>
             <input type="text" id="inputPassword" class="form-control" id="descripcion" name="descripcion" placeholder="Que deseas preguntar?" required="">
-            <label for="inputid_categoria" class="sr-only">id_categoria</label>
-            <input type="text" id="inputid_categoria" class="form-control" id="id_categoria" name="id_categoria" placeholder="id_categoria" required="">
-            <label for="inputid_usuario" class="sr-only">id_usuario</label>
-            <input type="text" id="inputid_usuario" class="form-control" id="id_usuario" name="id_usuario" placeholder="id_usuario" required="">
+            <select  class="form-control" name="id_categoria" id="">
+            <?php
+            $categoria = listar_categorias($db);
+                if(!empty($categoria)):
+                foreach($categoria as $val):
+            ?>
+                <option value="<?=$val['id_categoria']?>">
+                    <?=$val['nombre_categoria']?>    
+                </option>
+            <?php
+                endforeach;
+                endif;
+            ?>
+             </select>
+            <?php
+               echo  '<input type="hidden" id="inputid_usuario" class="form-control" value="'. $id_usuario .'"  id="id_usuario" name="id_usuario" placeholder="id_usuario" required="">';
+            ?>  
             <button class="btn btn-lg btn-primary btn-block" id="guardar_data" type="submit">Guardar</button>
         </form>
         </div>
