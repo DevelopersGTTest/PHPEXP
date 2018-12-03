@@ -25,8 +25,8 @@
         <div>
             <?php if(isset($_SESSION['id_usuario'])) : ?>
                 <h3>Bienvenido <?=$_SESSION['email_most'] ; ?></h3>
-                <h3>Tu id es: <?=$_SESSION['id_usuario'] ; ?></h3>
                 <a href="./includes/logout.php">Salir</a>
+                <a href="./includes/perfil.php">Ir a mi perfil</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Ingresar Post
@@ -38,7 +38,7 @@
     <!-- Post Inicio -->
     <?php
         $post = listar_post($db);
-        if(!empty($post)):
+        if(!empty($post)):   
           foreach($post as $value):
     ?>
     <br>
@@ -49,6 +49,7 @@
                 <h5 class="card-title"><?=$value['titulo'] ?></h5>
                 <p class="card-text"><?=$value['descripcion']?> </p>
                 <a href="#" class="btn btn-primary">Ver respuestas</a>
+                <a href="#" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
     </div>
