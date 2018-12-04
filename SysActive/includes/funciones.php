@@ -31,4 +31,18 @@ function listar_categorias($cnn){
     return $resultado;
 }
 
+function listar_datos_usuario($cnn, $sess){
+    
+    $sql = "SELECT * FROM usuarios WHERE id_usuario = '$sess'";
+    
+    $datos_usuario = mysqli_query($cnn, $sql);
+
+    $resultado;
+    if($datos_usuario && mysqli_num_rows($datos_usuario) >= 1 ){
+        $resultado = $datos_usuario;
+    }
+
+    return $resultado;
+}
+
 ?>
