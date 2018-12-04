@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once './includes/funciones.php';
-    $id_usuario = $_SESSION['id_usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +101,7 @@
             ?>
              </select>
             <?php
-               echo  '<input type="hidden" id="inputid_usuario" class="form-control" value="'. $id_usuario .'"  id="id_usuario" name="id_usuario" placeholder="id_usuario" required="">';
+               echo  '<input type="hidden" id="inputid_usuario" class="form-control" value="'. $_SESSION['id_usuario'] .'"  id="id_usuario" name="id_usuario" placeholder="id_usuario" required="">';
             ?>  
             <button class="btn btn-lg btn-primary btn-block" id="guardar_data" type="submit">Guardar</button>
         </form>
