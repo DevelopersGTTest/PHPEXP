@@ -45,4 +45,20 @@ function listar_datos_usuario($cnn, $sess){
     return $resultado;
 }
 
+function listar_detalle_post($cnn, $id_post ){
+    
+    $sql_list = "SELECT  post.id_post AS id_post, categoria.nombre_categoria 
+    AS nombre_categoria, 
+	    post.titulo AS titulo, post.descripcion AS descripcion
+    FROM categoria , post WHERE categoria.id_categoria = post.id_categoria
+    AND post.id_post =" . $id_post;
+
+    $detalle_post = mysqli_query($cnn, $sql_list );
+    $resultado;
+    if($detalle_post && mysqli_num_rows($detalle_post) >= 1 ){
+        $resultado = $detalle_post;
+    }
+    return $resultado;
+}
+
 ?>
