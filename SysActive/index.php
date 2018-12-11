@@ -1,6 +1,9 @@
 <?php
     session_start();
     require_once './includes/funciones.php';
+    if(isset($_SESSION['id_usuario'])){
+        $usu =  $_SESSION['id_usuario'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +41,7 @@
     <?php
         $post = listar_post($db);
         if(!empty($post)):   
-          foreach($post as $value):
+        foreach($post as $value):
     ?>
     <br>
     <div class="container">
@@ -48,7 +51,13 @@
                 <h5 class="card-title"><?=$value['titulo'] ?></h5>
                 <p class="card-text"><?=$value['descripcion']?> </p>
                 <a href="./includes/detalle-post.php?id=<?=$value['id_post'] ?>" class="btn btn-primary">Ver respuestas</a>
-                <a href="#" class="btn btn-danger">Eliminar</a>
+                 <?php
+                     if($value['id_usuario'] ==  $usu) :
+                 ?>   
+                    <a href="#" class="btn btn-danger">Eliminar</a>
+                <?php
+                    endif;
+                ?>
             </div>
         </div>
     </div>

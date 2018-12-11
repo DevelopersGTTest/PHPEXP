@@ -3,7 +3,8 @@
 function listar_post($cnn){
 
     $sql = "SELECT  post.id_post AS id_post, categoria.nombre_categoria AS nombre_categoria, 
-	post.titulo AS titulo, post.descripcion AS descripcion
+	post.titulo AS titulo, post.descripcion AS descripcion,
+    post.id_usuario AS id_usuario
     FROM categoria , post WHERE categoria.id_categoria = post.id_categoria";
 
     $post = mysqli_query($cnn, $sql);
