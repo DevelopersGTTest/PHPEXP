@@ -3,6 +3,11 @@
     require_once './includes/funciones.php';
     if(isset($_SESSION['id_usuario'])){
         $usu =  $_SESSION['id_usuario'];
+    }else{
+       if(!isset($_SESSION['id_usuario'])){
+           $_SESSION['no_usuario'] = "Registrate para poder ver";
+           $usu =  $_SESSION['no_usuario'];
+       }
     }
 ?>
 <!DOCTYPE html>
@@ -52,9 +57,10 @@
                 <p class="card-text"><?=$value['descripcion']?> </p>
                 <a href="./includes/detalle-post.php?id=<?=$value['id_post'] ?>" class="btn btn-primary">Ver respuestas</a>
                  <?php
-                     if($value['id_usuario'] ==  $usu) :
+                    if($value['id_usuario'] ==  $usu) :
                  ?>   
                     <a href="#" class="btn btn-danger">Eliminar</a>
+                    <a href=""><?=$_SESSION['no_usuario']?></a>
                 <?php
                     endif;
                 ?>
