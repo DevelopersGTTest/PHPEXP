@@ -47,7 +47,7 @@
             <div class="card-body">
                 <h5 class="card-title"><?=$value['titulo'] ?></h5>
                 <p class="card-text"><?=$value['descripcion']?> </p>
-                <a href="#" class="btn btn-primary">Ver respuestas</a>
+                <a href="./includes/detalle-post.php?id=<?=$value['id_post'] ?>" class="btn btn-primary">Ver respuestas</a>
                 <a href="#" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
