@@ -30,7 +30,6 @@
             <div class="card-body">
                 <h5 class="card-title"><?=$value['titulo'] ?></h5>
                 <p class="card-text"><?=$value['descripcion']?> </p>
-                <a href="#" class="btn btn-success">Agregar respuesta</a>
             </div>
         </div>
     </div>
@@ -39,6 +38,14 @@
     
         endforeach;
     ?>
+
+    <div class="container">
+        <div class="form-group">
+            <br>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <a href="#" class="btn btn-success">Agregar mi respuesta</a>
+        </div>
+    </div>
     
 </body>
 </html>
