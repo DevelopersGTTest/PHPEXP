@@ -59,7 +59,7 @@
                  <?php
                     if($value['id_usuario'] ==  $usu) :
                  ?>   
-                    <a href="#" class="btn btn-danger">Eliminar</a>
+                    <a href="./includes/eliminar_post.php?id=<?=$value['id_post'] ?>" class="btn btn-danger">Eliminar</a>
                 <?php
                     endif;
                 ?>
