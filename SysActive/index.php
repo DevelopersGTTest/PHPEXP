@@ -60,7 +60,6 @@
                     if($value['id_usuario'] ==  $usu) :
                  ?>   
                     <a href="#" class="btn btn-danger">Eliminar</a>
-                    <a href=""><?=$_SESSION['no_usuario']?></a>
                 <?php
                     endif;
                 ?>
