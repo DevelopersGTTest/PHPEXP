@@ -1,18 +1,27 @@
 <?php
 
-function listar_post($cnn){
+function listar_post($cnn, $whr = null ){
 
     $sql = "SELECT  post.id_post AS id_post, categoria.nombre_categoria AS nombre_categoria, 
 	post.titulo AS titulo, post.descripcion AS descripcion,
     post.id_usuario AS id_usuario
     FROM categoria , post WHERE categoria.id_categoria = post.id_categoria";
 
+    if(!empty($whr)){
+        $sql .= " AND post.titulo LIKE '%$whr%'";
+        
+        $post = mysqli_query($cnn, $sql);
+        var_dump($post);
+    }
+    
     $post = mysqli_query($cnn, $sql);
-
-    $resultado;
+    
+    $resultado = array();
 
     if($post && mysqli_num_rows($post) >= 1 ){
         $resultado = $post;
+    }else{
+        echo 'No se encontro coincidencias'; //por la busqueda
     }
 
     return $resultado;
@@ -61,5 +70,7 @@ function listar_detalle_post($cnn, $id_post ){
     }
     return $resultado;
 }
+
+
 
 ?>

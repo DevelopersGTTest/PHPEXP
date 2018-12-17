@@ -44,8 +44,15 @@
 
     <!-- Post Inicio -->
     <?php
-        $post = listar_post($db);
-        if(!empty($post)):   
+
+        if(isset($_SESSION['res_busqueda']) >= 1 ){
+            $post = listar_post($db, 'Spring');
+            var_dump($post);
+        }else{
+            $post = listar_post($db);
+        }
+
+        if(!empty($post)): 
         foreach($post as $value):
     ?>
     <br>
