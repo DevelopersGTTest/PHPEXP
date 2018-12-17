@@ -9,6 +9,10 @@
            $usu =  $_SESSION['no_usuario'];
        }
     }
+
+    if(isset($_POST)){
+        $term =  isset($_POST['termino']) ? $_POST['termino'] : false ;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +49,11 @@
     <!-- Post Inicio -->
     <?php
 
-        if(isset($_SESSION['res_busqueda']) >= 1 ){
-            $post = listar_post($db, 'Spring');
-            var_dump($post);
-        }else{
+        if(isset($term)){
+            $post = listar_post($db, $term);
+        }
+
+        if(!isset($term)){
             $post = listar_post($db);
         }
 

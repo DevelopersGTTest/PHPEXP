@@ -11,7 +11,7 @@ function listar_post($cnn, $whr = null ){
         $sql .= " AND post.titulo LIKE '%$whr%'";
         
         $post = mysqli_query($cnn, $sql);
-        var_dump($post);
+
     }
     
     $post = mysqli_query($cnn, $sql);
