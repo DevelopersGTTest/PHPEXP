@@ -8,7 +8,6 @@
     try{
 
         $db = mysqli_connect($server, $user, $pass, $dbName);
-        //mysqli_query($db, "SET NAMES 'utf8'");
 
         function sql($consulta){
             global $db; 
@@ -22,7 +21,7 @@
         }else{
             //echo 'Conexion Exitosa!!';
         }
-        
+    
     } catch (mysqli_sql_exception $e) { 
         throw $e; 
     } 
