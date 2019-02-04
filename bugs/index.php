@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +13,32 @@
 </head>
 <body>
 
+<?php
+
+if(!empty($_GET)){
+
+  $idx = $_GET['id'];
+  var_dump($idx);
+
+  if($idx){
+    echo "<script type='text/javascript'>
+    $(document).ready(function(){
+    $('#exampleModal').modal('show');
+    });
+    </script>";
+  }
+}
+
+
+?>
 
 
 
-<a href=""  data-toggle="modal" data-target="#exampleModal">algo </a>
+<a href="index.php?id=123">algo </a>
+
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
