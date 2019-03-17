@@ -52,7 +52,8 @@
         if(isset($term)){
             $post = listar_post($db, $term);
         }
-
+        
+        //...
         if(!isset($term)){
             $post = listar_post($db);
         }
