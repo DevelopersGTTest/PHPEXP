@@ -3,10 +3,11 @@
 class userController{
  
     public function showUsers(){
-        require_once '../models/User.php';
+        //require_once '../models/User.php';
 
-        $user = new User();
+        //$user = new User();
         //falta logica de negocio
+        require_once 'views/userViews/show.php';
     }
 
     public function createUser(){
