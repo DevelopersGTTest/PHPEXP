@@ -3,7 +3,13 @@
 require_once 'controllers/userController.php';
 
 $userCtrl = new userController();
-$userCtrl->createUser();
+
+if(isset($_GET['action'])){
+    $action = $_GET['action'];
+    $userCtrl->$action();
+} 
+
+
 
 
 
