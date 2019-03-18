@@ -2,11 +2,14 @@
 
 require_once 'controllers/userController.php';
 
-if(isset($_GET['controleerName']
-    && class_exists($_GET['controleerName']))){
+if(isset($_GET['ctrlName']) 
+    && class_exists($_GET['ctrlName'])){
         
-        $nameCtrl = $_GET['controleerName'];
-        $userCtrl = new $nameCtrl();
+        /*
+            CALL URL = http://localhost:8082/PHPEXP/mvc/?ctrlName=userController&action=showUsers        
+        */
+        $name_Ctrl = $_GET['ctrlName'];
+        $userCtrl = new  $name_Ctrl();
 
     if(isset($_GET['action']) 
         && method_exists($userCtrl, $_GET['action'])){
