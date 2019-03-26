@@ -13,7 +13,6 @@ class contactController {
     public function deleteContact(){
         //Build Logic...
     }
-
 }
 
 ?>
