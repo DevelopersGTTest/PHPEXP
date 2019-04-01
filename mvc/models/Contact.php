@@ -7,6 +7,9 @@ class Contact extends BaseModel {
     public $email;
     public $direccion;
 
+
+    //prueba de regreso user
+
     
 
 }
