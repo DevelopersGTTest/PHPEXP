@@ -1,6 +1,9 @@
-<?
+<?php
 
 require_once 'cnn.php';
+
+    $query = "SELECT * FROM animals";
+    $result = sql($query);
 
 ?> 
 <!DOCTYPE html>
@@ -9,11 +12,41 @@ require_once 'cnn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
 
 
+    <h1>paginator</h1>
+
+    <div class="container">
+            <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            
+            <?php
+                foreach($result as $key => $value):
+                //var_dump($value);
+            ?>
+            <tr>
+            <th scope="row"> <?= $value['id_animal'] ?> </th>
+            <td> <?= $value['name'] ?>  </td>
+            </tr>
+            <?php
+                endforeach;
+            ?>
+
+            
+        </tbody>
+        </table>
+    </div>
 
     
 </body>

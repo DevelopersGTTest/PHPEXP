@@ -10,10 +10,12 @@ try{
     $db = mysqli_connect($server, $user, $pass, $dbname);
 
     function sql($q){
-        global $db, $resultado;
-        $resultado = mysqli_query($db, utf8_decode($q));
-        return $resultado;
+        global $db;
+        $result = mysqli_query($db, $q);
+        return $result;
     }
+
+    //echo 'db connected';
     
 } catch (mysqli_sql_exception $e) { 
     throw $e; 
