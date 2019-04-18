@@ -3,10 +3,8 @@
 require_once 'cnn.php';
 
    $_SESSION['i'] = 0;
+   $_SESSION['page_current'] = 0;
     
-    $productos = $lista[0];
-    var_dump($productos );
-
     $sql_base = "SELECT * FROM animals";
     $query_base = sql($sql_base );
 
@@ -78,19 +76,32 @@ require_once 'cnn.php';
         
             <nav aria-label="Page navigation example">  
                 <ul class="pagination">
+                <?php
+                    
+                    if( isset( $_SESSION['page_current'] ) > 0 || isset( $_SESSION['page_current'] ) >= 1    ):
+                ?>
                     <li class="page-item"><a class="page-link" href="#"> &laquo;  </a></li>
+                <?php
+                    endif;
+                ?>
                 <?php
         
                     for($page = 1; $page <= $number_of_pages; $page ++):
                         if( $_SESSION['i'] < 3 ):
                 ?>
-                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $page  ?>"> <?=$page ?> </a></li>
+                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $page  ?>"> <?=  $page ?> </a></li>
                 <?php
                         endif;
                         $_SESSION['i'] ++;
                     endfor;
                 ?>
+                <?php
+                    if( $_SESSION['page_current']  < $number_of_pages  ):
+                ?>
                     <li class="page-item"><a class="page-link" href="index.php?page=<?= $_SESSION['page_current'] + 1  ?>" > &raquo; </a></li>
+                <?php
+                    endif;
+                ?>
                 </ul>
             </nav>
         </div>
