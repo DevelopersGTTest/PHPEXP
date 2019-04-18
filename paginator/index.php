@@ -5,15 +5,18 @@ require_once 'cnn.php';
     $sql_base = "SELECT * FROM animals";
     $query_base = sql($sql_base );
 
-    $results_per_page = 10;
+    $results_per_page = 4;
 
     $number_of_results = mysqli_num_rows($query_base );
     $number_of_pages = ceil($number_of_results/$results_per_page);
 
     if(!isset( $_GET['page'])){
         $page = 1;
+        var_dump($page);
     }else{
         $page = $_GET['page'];
+        $_SESSION['page_current'] = $page;
+        var_dump($page);
     }
 
     $first_position = ($page -1 ) * $results_per_page;
@@ -78,7 +81,7 @@ require_once 'cnn.php';
                 <?php
                     endfor;
                 ?>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $_SESSION['page_current'] + 1  ?>" > &raquo; </a></li>
                 </ul>
             </nav>
         </div>
