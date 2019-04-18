@@ -2,8 +2,26 @@
 
 require_once 'cnn.php';
 
-    $query = "SELECT * FROM animals";
+    $sql_base = "SELECT * FROM animals";
+    $query_base = sql($sql_base );
+
+    $results_per_page = 10;
+
+    $number_of_results = mysqli_num_rows($query_base );
+    $number_of_pages = ceil($number_of_results/$results_per_page);
+
+    if(!isset( $_GET['page'])){
+        $page = 1;
+    }else{
+        $page = $_GET['page'];
+    }
+
+    $first_position = ($page -1 ) * $results_per_page;
+    $query = 'SELECT * FROM animals LIMIT ' .$first_position . ',' . $results_per_page;
+    
     $result = sql($query);
+    
+    var_dump($result );
 
 ?> 
 <!DOCTYPE html>
@@ -46,6 +64,19 @@ require_once 'cnn.php';
             
         </tbody>
         </table>
+
+        <div class="container">
+        
+        <?php
+            for($page = 1; $page <= $number_of_pages; $page ++):
+        ?>
+            <a href="index.php?page=<?= $page  ?>"> <?= $page ?> </a>
+        <?php
+            endfor;
+        ?>
+
+        </div>
+
     </div>
 
     
