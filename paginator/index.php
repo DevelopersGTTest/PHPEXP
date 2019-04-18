@@ -42,7 +42,7 @@ require_once 'cnn.php';
 <body>
 
 
-    <h1>paginator</h1>
+    <h1>Paginator HCK </h1>
 
     <div class="container">
             <table class="table">
@@ -53,20 +53,18 @@ require_once 'cnn.php';
             </tr>
         </thead>
         <tbody>
-            
-            
+        
             <?php
                 foreach($result as $key => $value):
                 //var_dump($value);
             ?>
             <tr>
-            <th scope="row"> <?= $value['id_animal'] ?> </th>
-            <td> <?= $value['name'] ?>  </td>
+                <th scope="row"> <?= $value['id_animal'] ?> </th>
+                <td> <?= $value['name'] ?>  </td>
             </tr>
             <?php
                 endforeach;
             ?>
-
             
         </tbody>
         </table>
@@ -77,7 +75,6 @@ require_once 'cnn.php';
             <nav aria-label="Page navigation example">  
                 <ul class="pagination">
                 <?php
-                    
                     if( isset( $_SESSION['page_current'] ) > 0 || isset( $_SESSION['page_current'] ) >= 1    ):
                 ?>
                     <li class="page-item"><a class="page-link" href="#"> &laquo;  </a></li>
@@ -85,7 +82,6 @@ require_once 'cnn.php';
                     endif;
                 ?>
                 <?php
-        
                     for($page = 1; $page <= $number_of_pages; $page ++):
                         if( $_SESSION['i'] < 3 ):
                 ?>
