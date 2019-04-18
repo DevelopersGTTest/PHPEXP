@@ -2,6 +2,11 @@
 
 require_once 'cnn.php';
 
+   $_SESSION['i'] = 0;
+    
+    $productos = $lista[0];
+    var_dump($productos );
+
     $sql_base = "SELECT * FROM animals";
     $query_base = sql($sql_base );
 
@@ -12,11 +17,11 @@ require_once 'cnn.php';
 
     if(!isset( $_GET['page'])){
         $page = 1;
-        var_dump($page);
+        //var_dump($page);
     }else{
         $page = $_GET['page'];
         $_SESSION['page_current'] = $page;
-        var_dump($page);
+        //var_dump($page);
     }
 
     $first_position = ($page -1 ) * $results_per_page;
@@ -24,7 +29,7 @@ require_once 'cnn.php';
     
     $result = sql($query);
     
-    var_dump($result );
+    //var_dump($result );
 
 ?> 
 <!DOCTYPE html>
@@ -73,12 +78,16 @@ require_once 'cnn.php';
         
             <nav aria-label="Page navigation example">  
                 <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#"> &laquo;  </a></li>
                 <?php
+        
                     for($page = 1; $page <= $number_of_pages; $page ++):
+                        if( $_SESSION['i'] < 3 ):
                 ?>
-                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $page  ?>"> <?= $page ?> </a></li>
+                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $page  ?>"> <?=$page ?> </a></li>
                 <?php
+                        endif;
+                        $_SESSION['i'] ++;
                     endfor;
                 ?>
                     <li class="page-item"><a class="page-link" href="index.php?page=<?= $_SESSION['page_current'] + 1  ?>" > &raquo; </a></li>
