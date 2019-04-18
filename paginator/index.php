@@ -67,14 +67,20 @@ require_once 'cnn.php';
 
         <div class="container">
         
-        <?php
-            for($page = 1; $page <= $number_of_pages; $page ++):
-        ?>
-            <a href="index.php?page=<?= $page  ?>"> <?= $page ?> </a>
-        <?php
-            endfor;
-        ?>
-
+        
+            <nav aria-label="Page navigation example">  
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <?php
+                    for($page = 1; $page <= $number_of_pages; $page ++):
+                ?>
+                    <li class="page-item"><a class="page-link" href="index.php?page=<?= $page  ?>"> <?= $page ?> </a></li>
+                <?php
+                    endfor;
+                ?>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
         </div>
 
     </div>
