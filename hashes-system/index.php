@@ -11,9 +11,12 @@ $data_encoded = base64_encode( $mixed );
 
 var_dump( $data_encoded);
 //die();
-
 //Decoded
 /*
+
+fix encrypt building
+
+
 $data_decoded = base64_decode( $data_encoded );
 echo $data_decoded;
 die();
