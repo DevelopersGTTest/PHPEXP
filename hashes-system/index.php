@@ -14,7 +14,7 @@ var_dump( $data_encoded);
 //Decoded
 /*
 
-fix encrypt building
+fix encrypt building 13/05/2019
 
 
 $data_decoded = base64_decode( $data_encoded );
