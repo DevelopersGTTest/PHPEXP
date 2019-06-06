@@ -17,6 +17,8 @@ try{
 
     //echo 'db connected';
     
+    //Adding generic Base operations....
+
 } catch (mysqli_sql_exception $e) { 
     throw $e; 
 } 
