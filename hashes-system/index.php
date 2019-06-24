@@ -9,7 +9,7 @@ $mixed = $user ."." . $other;
 
 $data_encoded = base64_encode( $mixed );
 
-var_dump( $data_encoded);
+//var_dump( $data_encoded);
 //die();
 //Decoded
 /*
