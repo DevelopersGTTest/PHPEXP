@@ -8,6 +8,7 @@ class userController{
         //$user = new User();
         //falta logica de negocio
         require_once 'views/userViews/show.php';
+        //ref
     }
 
     public function createUser(){
