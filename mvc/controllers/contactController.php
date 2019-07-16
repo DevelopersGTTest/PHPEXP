@@ -7,7 +7,7 @@ class contactController {
     }
 
     public function getContacts(){
-        //Build Logic.....
+        //Build Logic..
     }
 
     public function deleteContact(){
