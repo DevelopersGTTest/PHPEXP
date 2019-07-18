@@ -25,6 +25,7 @@ function process_array($array_data ){
     //build
 }
 
+//in future deprecated this form
 $HTTP_RAW_POST_DATA = isset($HTTP_RAW_POST_DATA) ? $HTTP_RAW_POST_DATA : '';
 $service->service($HTTP_RAW_POST_DATA);
 
