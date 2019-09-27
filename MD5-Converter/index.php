@@ -12,6 +12,12 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 // get posted data
 $dataCodes = json_decode(file_get_contents("php://input"));
 var_dump( $dataCodes );
-
+if( $dataCodes ){
+    http_response_code(201); //fake simulations
+    echo json_encode(array("message" => "exist data in this end-pint."));
+}else{
+    http_response_code(400);
+    echo json_encode(array("message" => "No Setting Data"));
+}
 
 ?>
