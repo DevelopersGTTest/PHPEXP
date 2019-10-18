@@ -1,9 +1,9 @@
 <?php
-    echo 'holass';
+    require_once 'connection.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,5 +12,24 @@
 </head>
 <body>
     <a href="add.php"> Add </a>
+    <table style="width:60%">
+  <tr>
+    <th>Firstname</th>
+    <th>Age</th>
+  </tr>
+  <?php 
+    $query = "SELECT * FROM entity";
+    $resultQ = sql($query);
+    foreach( $resultQ as $key => $value ):
+        var_dump($value);
+  ?>
+  <tr>
+    <td><?=$value['names'] ?></td>
+    <td><?=$value['age'] ?></td>
+  </tr>
+  <?php
+    endforeach;
+  ?>
+  </table>
 </body>
 </html>
