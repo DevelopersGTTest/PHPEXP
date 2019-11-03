@@ -7,9 +7,7 @@ if(!empty($_POST)){
     $age = $_POST['age'];
 
     $query = "INSERT INTO entity( names, age) VALUES('$names', $age);";
-    $result = sql($query);
-    var_dump( $result );
-    die();
+    $result = mysqli_query($db, $query);
     if( $result ){
         echo 'se inserto algo en la db';
     }

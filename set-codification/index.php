@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type: text/html; charset=UTF-8');  
+
     require_once 'connection.php';
 ?>
 
@@ -20,7 +20,7 @@
   </tr>
   <?php 
     $query = "SELECT * FROM entity";
-    $resultQ = sql($query);
+    $resultQ = mysqli_query($db, $query);
     foreach( $resultQ as $key => $value ):
         var_dump($value);
   ?>
