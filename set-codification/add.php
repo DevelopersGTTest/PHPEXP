@@ -8,7 +8,8 @@ if(!empty($_POST)){
 
     $query = "INSERT INTO entity( names, age) VALUES('$names', $age);";
     $result = sql($query);
-
+    var_dump( $result );
+    die();
     if( $result ){
         echo 'se inserto algo en la db';
     }

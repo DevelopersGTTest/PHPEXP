@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=UTF-8');  
     require_once 'connection.php';
 ?>
 
@@ -24,7 +25,7 @@
         var_dump($value);
   ?>
   <tr>
-    <td><?=$value['names'] ?></td>
+    <td><?=$value['name'] ?></td>
     <td><?=$value['age'] ?></td>
   </tr>
   <?php

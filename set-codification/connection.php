@@ -3,19 +3,20 @@
     $server = 'localhost';
     $user = 'root';
     $pass = '';
-    $dbName = 'develop-data';
+    $dbName = 'codif';
 
     
     try{
         
         $db = mysqli_connect($server, $user, $pass, $dbName);
+        mysqli_query($db, "SET NAMES 'utf8'");
         
-        function sql($consulta){
+        /*function sql($consulta){
             global $db; 
             $resultado;
             $resultado = mysqli_query($db, utf8_decode($consulta));
             return $resultado;
-        }
+        }*/
 
         /**
          * 
