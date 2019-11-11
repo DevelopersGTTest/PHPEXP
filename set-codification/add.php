@@ -11,6 +11,7 @@ if(!empty($_POST)){
     var_dump($resultQ);
     if( $resultQ ){
         echo 'se inserto algo en la db';
+        //this a insert
     }
 
 }

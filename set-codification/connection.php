@@ -15,9 +15,6 @@
         }else{
             //echo 'Conexion Exitosa!!';
         } 
-        
-      
-        
     
     } catch (mysqli_sql_exception $e) { 
         throw $e; 
