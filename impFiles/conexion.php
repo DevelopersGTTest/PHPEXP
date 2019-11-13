@@ -8,6 +8,7 @@ $dbname = 'pruebarol';
 $db = mysqli_connect($server, $user, $pass, $dbname);
 
 mysqli_query($db, "SET NAMES 'utf8'");
+//stting needed
 
 if(mysqli_connect_errno()){
     echo 'fallo la conexion :' . mysqli_connect_errno();
