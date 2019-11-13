@@ -18,7 +18,7 @@ try{
     //echo 'db connected';
     
     //Adding generic Base operations....
-
+    //no n ages
 } catch (mysqli_sql_exception $e) { 
     throw $e; 
 } 
