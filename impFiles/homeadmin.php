@@ -7,7 +7,7 @@
     <title>Este es ek home de admin</title>
 </head>
 <body>
-
+    <!-- |.|  - -->
     <h1>bienvenido admin</h1>
     
 </body>
