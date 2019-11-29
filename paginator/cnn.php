@@ -8,7 +8,7 @@ try{
     $dbname = "paginator";
 
     $db = mysqli_connect($server, $user, $pass, $dbname);
-
+    //def notations
     function sql($q){
         global $db;
         $result = mysqli_query($db, $q);
