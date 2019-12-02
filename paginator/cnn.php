@@ -11,6 +11,7 @@ try{
     //def notations
     function sql($q){
         global $db;
+        //valid query
         $result = mysqli_query($db, $q);
         return $result;
     }
