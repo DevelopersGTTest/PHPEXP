@@ -6,7 +6,6 @@
     $dbName = 'sisdev';
 
     try{
-
         $db = mysqli_connect($server, $user, $pass, $dbName);
         mysqli_query($db, "SET NAMES 'utf8'");
 
