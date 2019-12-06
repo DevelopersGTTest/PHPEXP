@@ -29,9 +29,7 @@ function listar_post($cnn, $whr = null ){
 function listar_categorias($cnn){
 
     $sql = "SELECT * FROM categoria";
-
     $categoria = mysqli_query($cnn, $sql);
-
     $resultado;
     
     if($categoria &&  mysqli_num_rows($categoria) >= 1 ){
