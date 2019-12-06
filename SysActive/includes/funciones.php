@@ -9,7 +9,6 @@ function listar_post($cnn, $whr = null ){
 
     if(!empty($whr)){
         $sql .= " AND post.titulo LIKE '%$whr%'";
-        
         $post = mysqli_query($cnn, $sql);
 
     }
