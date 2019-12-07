@@ -24,7 +24,7 @@ document.addEventListener("click", function(event){
 
 	var content = document.querySelector(event.target.hash);
 	if (!content) return;
-
+	//logstage
 	toggle(content);
 }, false)
 
