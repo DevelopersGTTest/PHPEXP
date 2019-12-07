@@ -16,6 +16,12 @@ $service->register("helow",
     array('return' => 'xsd:string' ), 
     $name_space);
 
+//say
+/*$service->register("say", 
+    array('param' => 'xsd:string' ), 
+    array('return' => 'xsd:string' ), 
+    $name_space);*/
+	
 function helow($param){
     $result = "helow :" .$param;
     return $result;
