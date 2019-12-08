@@ -6,7 +6,7 @@
     }else{
        if(!isset($_SESSION['id_usuario'])){
            $_SESSION['no_usuario'] = "Registrate para poder ver";
-           $usu =  $_SESSION['no_usuario'];
+           $usu =  $_SESSION['no_usuario']; //change value
        }
     }
 
